@@ -72,7 +72,7 @@ HyCalParameterisation::HyCalParameterisation(const char* filepath)
                 z = 7.;
             }
             Module_DAQ daq(crate, slot, channel, tdc_group, mean, sigma);
-            moduleList.push_back(HyCal_Module(id, t, size, l, x, y, z, daq));
+            moduleList.push_back(HyCal_Module(id, t, size, l, -x, y, z, daq)); // config coordinates are seen opposite to the beam
         }
         module_list.close();
     }
